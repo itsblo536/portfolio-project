@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -29,8 +30,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#" >Github</a>
-              <a class="nav-link" href="#" >Resume</a>
+              <a class="nav-link" href="https://github.com/itsblo536" >Github</a>
+              <a class="nav-link" href="{% static 'BLResume.pdf' %}" >Resume</a>
               <a class="nav-link" href="#" >Blog</a>
             </div>
           </div>

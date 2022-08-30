@@ -7,6 +7,14 @@ class Blog(models.Model):
     body = models.TextField(max_length=500)
     image = models.ImageField(upload_to='images/')
 
+    # renames Blog objects as their title - easier to identify in admin page
+    def __str__(self):
+        return self.title
+
+    # Caps body of text on home page to 100 words 
+    def summary(self):
+        return self.body[:100]
+
 #Create a Blog models
 #title
 #publication date
