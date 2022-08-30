@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,13 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # Used postgres database instead of sqlite3
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': 'Bloisgod2002!',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -118,3 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Anytime someone's saving a file connected to model, it should go to media file
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# When someone's trying to access an image, where can they do that
+MEDIA_URL = '/media/'
