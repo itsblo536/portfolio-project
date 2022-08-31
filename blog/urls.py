@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.allblogs, name='allblogs'),
-    # allows users to search for blogs by number
+    # detects if an int is in url path; if so, stores int as blog_id
+    # and passes into detail function
     path('<int:blog_id>/', views.detail, name='detail'),
 ] 

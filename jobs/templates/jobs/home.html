@@ -44,7 +44,7 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi, I'm Brendan</h1>
+        <h1 class="fw-light">Hi, I'm Brendan.</h1>
         <p class="lead text-muted">
             I'm a junior at Cornell University double majoring in Applied Economics & Management
             and Information Science. I built this website using Django and Bootstrap as a part of a course I took to self-teach
@@ -66,19 +66,20 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <!-- loop through all available jobs/experience -->
         {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}"/>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ job.image.url }}" height=400 width=200/>
             <div class="card-body">
                 <!-- prints each job's summary -->
               <p class="card-text">{{job.summary}}</p>
             </div>
           </div>
         </div>
+        {% endfor %}
+
       </div>
     </div>
   </div>
-  {% endfor %}
 
 </main>
 
